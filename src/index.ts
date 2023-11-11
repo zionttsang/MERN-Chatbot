@@ -1,23 +1,9 @@
-import express from "express";
-import { config } from 'dotenv';
 import connectToDB from "./db/connection.js";
-
-// build app
-config()
-const app = express();
-// set params
-const listen_port = 5001;
-
-// middleware
-app.use(express.json());
-
-// app.post('/hello/:userid', (req, res, next) => {
-//   console.log(req.params.userid);
-//   res.send('yes hello.')
-// })
+import app from "./app.js";
 
 // connection and listener;
+const listen_port = process.env.PORT || 5002;
 connectToDB().then(() => {
-  app.listen(listen_port, () => { console.log('listen on ', listen_port) })
+  app.listen(listen_port, () => { console.log('Listening on ', listen_port) })
 
-})
+}).catch((err) => console.log(err))

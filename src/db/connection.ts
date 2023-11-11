@@ -2,7 +2,10 @@ import { connect, disconnect } from "mongoose";
 
 export default async function connectToDB() {
     try {
-        await connect(process.env.MONGODB_URL)
+        const options = {
+            dbName: 'mgdb',
+        }
+        await connect(process.env.MONGODB_URL, options)
         console.log("Connected to database")
     } catch (error) {
         console.log(error)
