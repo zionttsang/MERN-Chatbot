@@ -4,8 +4,19 @@ html,
 body {
   margin: 0;
   padding: 0;
-  /* background-color: #05101c; */
-  background-color: darkgrey;
+  background-color: #05101c;
+  /* background-color: darkgrey; */
   color: white;
   font-family: "Roboto Slabm", serif;
+}
+
+.nav-link {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
