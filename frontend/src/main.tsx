@@ -6,6 +6,11 @@ import { ThemeProvider, createTheme } from '@mui/material'
 import { BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext.tsx'
 
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:5001/api/v1";
+axios.defaults.withCredentials = true;
+
+
 // set theme
 const theme = createTheme({
 	typography: { fontFamily: 'Robot Slab, serif', allVariants: { color: 'white' } }
